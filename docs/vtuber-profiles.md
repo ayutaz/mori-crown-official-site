@@ -4,11 +4,11 @@
 
 ## 1. メンバー別設定ファイル
 
-- 森乃ミント: `docs/vtubers/morino-mint.md`
-- 若葉ルル: `docs/vtubers/wakaba-ruru.md`
-- 芽吹こはる: `docs/vtubers/mebuki-koharu.md`
-- 翠羽ノア: `docs/vtubers/suiu-noa.md`
-- 榊シダ: `docs/vtubers/sakaki-shida.md`
+- 森乃ミント: [docs/vtubers/morino-mint.md](docs/vtubers/morino-mint.md)
+- 若葉ルル: [docs/vtubers/wakaba-ruru.md](docs/vtubers/wakaba-ruru.md)
+- 芽吹こはる: [docs/vtubers/mebuki-koharu.md](docs/vtubers/mebuki-koharu.md)
+- 翠羽ノア: [docs/vtubers/suiu-noa.md](docs/vtubers/suiu-noa.md)
+- 榊シダ: [docs/vtubers/sakaki-shida.md](docs/vtubers/sakaki-shida.md)
 
 ## 2. 共通ルール
 
@@ -17,10 +17,13 @@
   - 総合タグ
   - 配信タグ
   - ファンアートタグ
-  - 切り抜きタグ（新規追加時のみ）
+  - 切り抜きタグ（全員必須）
 - 配信の温度感:
   - 夜枠は「安心して聞けるテンション」を標準にする
   - 激しい企画は月2回までに制限して疲労を避ける
+- 配信時間:
+  - 平日枠は原則 `22:00-24:00`
+  - 土日枠は原則 `13:00-16:00`
 - コラボルール:
   - 事前に企画シートを共有
   - 終了後に10分の振り返りを実施
