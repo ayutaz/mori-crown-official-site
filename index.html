@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MORI CROWN! | 架空VTuber事務所</title>
+    <meta
+      name="description"
+      content="架空のVTuber事務所 MORI CROWN! の公式サイト。ニュース、タレント、ショップ、採用情報をご案内します。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-blob bg-blob-a" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-b" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-c" aria-hidden="true"></div>
+
+    <header class="site-header reveal" style="--delay: 0.05s">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">✿</span>
+        <span class="brand-text">MORI CROWN!</span>
+      </a>
+      <nav class="site-nav" aria-label="グローバルナビゲーション">
+        <a href="#home">ホーム</a>
+        <a href="#news">ニュース</a>
+        <a href="#talent">タレント</a>
+        <a href="#shop">ショップ</a>
+        <a href="#audition">採用</a>
+        <a href="#company">会社情報</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal" id="home" style="--delay: 0.12s">
+        <div class="hero-copy">
+          <p class="eyebrow">Fictional VTuber Agency</p>
+          <h1>やさしい緑の世界から、毎日に配信の魔法を。</h1>
+          <p>
+            MORI CROWN! は、歌・ゲーム・雑談で「ちょっと元気になる時間」を届ける
+            架空のVTuber事務所です。ふわっと可愛い空気感と、きちんとした運営で活動中。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#talent">タレントを見る</a>
+            <a class="btn btn-ghost" href="#news">最新ニュースへ</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>今月のピックアップ</h2>
+          <ul>
+            <li>新人「森乃ミント」デビュー配信 2/18 20:00</li>
+            <li>3Dライブ「Leaflight Fes」開催決定</li>
+            <li>春限定グッズ 受注スタート</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="news" style="--delay: 0.2s">
+        <div class="section-title-wrap">
+          <p class="section-kicker">HOT NEWS</p>
+          <h2>最新情報をチェック</h2>
+        </div>
+
+        <div class="chip-row" role="tablist" aria-label="ニュースカテゴリ">
+          <button class="chip is-active" data-filter="all" type="button">すべて</button>
+          <button class="chip" data-filter="stream" type="button">配信</button>
+          <button class="chip" data-filter="event" type="button">イベント</button>
+          <button class="chip" data-filter="goods" type="button">グッズ</button>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card" data-category="stream">
+            <div class="news-top">
+              <span class="tag tag-stream">配信</span>
+              <time datetime="2026-02-10">2026.02.10</time>
+            </div>
+            <h3>新人Vtuber「森乃ミント」デビュー記念配信決定！</h3>
+            <a href="#">詳しく見る</a>
+          </article>
+
+          <article class="news-card" data-category="event">
+            <div class="news-top">
+              <span class="tag tag-event">イベント</span>
+              <time datetime="2026-02-08">2026.02.08</time>
+            </div>
+            <h3>3周年記念ライブ「Leaflight Fes 2026」開催決定！</h3>
+            <a href="#">詳しく見る</a>
+          </article>
+
+          <article class="news-card" data-category="goods">
+            <div class="news-top">
+              <span class="tag tag-goods">グッズ</span>
+              <time datetime="2026-02-05">2026.02.05</time>
+            </div>
+            <h3>春色アクリルスタンド＆ボイスセット販売開始</h3>
+            <a href="#">詳しく見る</a>
+          </article>
+
+          <article class="news-card" data-category="event">
+            <div class="news-top">
+              <span class="tag tag-event">イベント</span>
+              <time datetime="2026-02-01">2026.02.01</time>
+            </div>
+            <h3>公式ファンクラブ会員募集中！限定特典あり</h3>
+            <a href="#">詳しく見る</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="talent reveal" id="talent" style="--delay: 0.26s">
+        <div class="section-title-wrap">
+          <p class="section-kicker">TALENTS</p>
+          <h2>所属タレント</h2>
+        </div>
+        <div class="talent-grid">
+          <article class="talent-card">
+            <div class="avatar avatar-mint" aria-hidden="true"></div>
+            <h3>森乃ミント</h3>
+            <p>歌と雑談。深夜のゆる配信担当。</p>
+          </article>
+          <article class="talent-card">
+            <div class="avatar avatar-lime" aria-hidden="true"></div>
+            <h3>若葉ルル</h3>
+            <p>ゲーム実況と企画コラボが得意。</p>
+          </article>
+          <article class="talent-card">
+            <div class="avatar avatar-olive" aria-hidden="true"></div>
+            <h3>芽吹こはる</h3>
+            <p>ASMR・朗読・お悩み相談配信。</p>
+          </article>
+          <article class="talent-card">
+            <div class="avatar avatar-sage" aria-hidden="true"></div>
+            <h3>翠羽ノア</h3>
+            <p>英語配信と歌枠。海外交流担当。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-grid reveal" style="--delay: 0.34s">
+        <article class="cta-card" id="shop">
+          <p class="section-kicker">SHOP</p>
+          <h2>公式オンラインストア</h2>
+          <p>限定グッズやコラボ商品など、ここでしか買えないアイテムを販売中。</p>
+          <a class="btn btn-primary" href="#">ショップサイトへ</a>
+        </article>
+
+        <article class="cta-card" id="audition">
+          <p class="section-kicker">AUDITION</p>
+          <h2>一緒に夢を叶えませんか？</h2>
+          <p>
+            MORI CROWN! では新しいタレントを随時募集中。配信経験の有無は問いません。
+          </p>
+          <a class="btn btn-primary" href="#">採用情報を見る</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal" id="company" style="--delay: 0.42s">
+      <div class="footer-brand">
+        <p class="brand-text">MORI CROWN!</p>
+        <p>毎日に小さなお祭りを。夢と笑顔を届ける、架空のVtuberプロダクション。</p>
+      </div>
+      <div>
+        <h3>会社情報</h3>
+        <ul>
+          <li><a href="#home">ホーム</a></li>
+          <li><a href="#company">会社概要</a></li>
+          <li><a href="#audition">採用</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>コンテンツ</h3>
+        <ul>
+          <li><a href="#news">ニュース</a></li>
+          <li><a href="#talent">タレント</a></li>
+          <li><a href="#shop">ショップ</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
