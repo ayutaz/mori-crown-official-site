@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'talents'>;
+}
+
+const { entry } = Astro.props;
+const toHref = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+---
+
+<article class="card talent-card">
+  <img src={entry.data.image} alt={`${entry.data.name} 立ち絵`} loading="lazy" />
+  <div class="talent-body">
+    <p class="chip" style={`--chip-color:${entry.data.color};`}>{entry.data.generation}</p>
+    <h3><a href={toHref(`/talents/${entry.slug}/`)}>{entry.data.name}</a></h3>
+    <p class="small-muted">{entry.data.catchphrase}</p>
+    <p>{entry.data.summary}</p>
+  </div>
+</article>

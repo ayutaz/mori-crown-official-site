@@ -1,0 +1,52 @@
+[
+  {
+    "day": "月",
+    "slots": [
+      {"time": "22:00", "talent": "芽吹こはる", "title": "木漏れ日朗読", "url": "#"},
+      {"time": "22:30", "talent": "榊シダ", "title": "DTM基礎", "url": "#"}
+    ]
+  },
+  {
+    "day": "火",
+    "slots": [
+      {"time": "22:00", "talent": "森乃ミント", "title": "深夜雑談", "url": "#"},
+      {"time": "22:00", "talent": "若葉ルル", "title": "アクションゲーム", "url": "#"}
+    ]
+  },
+  {
+    "day": "水",
+    "slots": [
+      {"time": "22:00", "talent": "森乃ミント", "title": "歌枠", "url": "#"},
+      {"time": "22:30", "talent": "芽吹こはる", "title": "ASMR", "url": "#"}
+    ]
+  },
+  {
+    "day": "木",
+    "slots": [
+      {"time": "22:00", "talent": "翠羽ノア", "title": "JP/EN ラジオ", "url": "#"},
+      {"time": "22:00", "talent": "若葉ルル", "title": "参加型企画", "url": "#"},
+      {"time": "22:00", "talent": "榊シダ", "title": "シダ工房ライブ", "url": "#"}
+    ]
+  },
+  {
+    "day": "金",
+    "slots": [
+      {"time": "22:00", "talent": "翠羽ノア", "title": "英語歌枠", "url": "#"},
+      {"time": "23:00", "talent": "森乃ミント", "title": "作業用BGM", "url": "#"}
+    ]
+  },
+  {
+    "day": "土",
+    "slots": [
+      {"time": "14:00", "talent": "若葉ルル", "title": "大型コラボ", "url": "#"},
+      {"time": "14:00", "talent": "翠羽ノア", "title": "海外コラボ", "url": "#"}
+    ]
+  },
+  {
+    "day": "日",
+    "slots": [
+      {"time": "13:00", "talent": "芽吹こはる", "title": "短編朗読", "url": "#"},
+      {"time": "13:00", "talent": "森乃ミント", "title": "ショート配信", "url": "#"}
+    ]
+  }
+]

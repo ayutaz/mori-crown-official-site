@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="ショップ | MORI CROWN!" description="MORI CROWN! 公式オンラインショップ案内。">
+  <div class="container">
+    <PageHero
+      eyebrow="SHOP"
+      title="公式オンラインストア"
+      lead="限定グッズやボイス商品を販売しています。"
+    />
+
+    <section class="section grid grid-3">
+      <article class="card">
+        <h3>春限定アクリルスタンド</h3>
+        <p>販売期間: 2026-02-05 〜 2026-02-20</p>
+      </article>
+      <article class="card">
+        <h3>しおりセット</h3>
+        <p>販売期間: 2026-02-05 〜 2026-02-20</p>
+      </article>
+      <article class="card">
+        <h3>録り下ろしボイスカード</h3>
+        <p>販売期間: 2026-02-05 〜 2026-02-20</p>
+      </article>
+    </section>
+
+    <section class="section notice">
+      <p style="margin: 0;">
+        外部ECに遷移します。発送・決済・返品については遷移先の利用規約をご確認ください。
+      </p>
+      <a class="button button-primary" style="margin-top: 0.7rem;" href="#">ショップサイトへGO!</a>
+    </section>
+  </div>
+</BaseLayout>

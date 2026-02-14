@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import scheduleData from '../data/schedule.json';
+
+const toHref = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+---
+
+<BaseLayout title="配信スケジュール | MORI CROWN!" description="MORI CROWN! の週間配信スケジュール。">
+  <div class="container">
+    <PageHero
+      eyebrow="SCHEDULE"
+      title="配信スケジュール"
+      lead="いま視聴する配信と、今週の予定をここで確認できます。"
+    />
+
+    <section class="section">
+      <article class="surface" style="padding: 1rem;">
+        <h2 style="margin-top: 0;">いま視聴する</h2>
+        <p class="section-lead">本日の注目配信: 森乃ミント「深夜雑談」</p>
+        <a class="button button-primary" style="margin-top: 0.7rem;" href="#">配信URLへ</a>
+      </article>
+    </section>
+
+    <section class="section schedule-columns">
+      {scheduleData.map((day) => (
+        <article class="schedule-column">
+          <h3>{day.day}</h3>
+          {day.slots.map((slot) => (
+            <div class="schedule-slot">
+              <p><strong>{slot.time}</strong> {slot.title}</p>
+              <p>{slot.talent}</p>
+              <a class="text-link" style="margin-top: 0.2rem;" href={slot.url}>視聴ページ</a>
+            </div>
+          ))}
+        </article>
+      ))}
+    </section>
+
+    <section class="section">
+      <a class="button button-ghost" href={toHref('/talents/')}>タレントから配信を探す</a>
+    </section>
+  </div>
+</BaseLayout>

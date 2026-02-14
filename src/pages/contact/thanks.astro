@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const toHref = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+---
+
+<BaseLayout title="送信完了 | MORI CROWN!" description="お問い合わせの送信が完了しました。">
+  <div class="container">
+    <section class="page-hero surface">
+      <p class="eyebrow">THANK YOU</p>
+      <h1>お問い合わせを受け付けました</h1>
+      <p>内容を確認のうえ、順次ご連絡します。</p>
+      <div class="cta-row" style="margin-top: 0.9rem;">
+        <a class="button button-primary" href={toHref('/')}>ホームへ戻る</a>
+        <a class="button button-ghost" href={toHref('/news/')}>ニュースを見る</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

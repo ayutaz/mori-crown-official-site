@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import TalentCard from '../components/TalentCard.astro';
+
+const allNews = await getCollection('news');
+const allTalents = await getCollection('talents');
+
+const featuredNews = [...allNews].sort((a, b) => b.data.date.localeCompare(a.data.date)).slice(0, 3);
+const featuredTalents = [...allTalents].sort((a, b) => a.data.generation.localeCompare(b.data.generation));
+
+const toHref = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+---
+
+<BaseLayout
+  title="MORI CROWN! | 架空VTuber事務所"
+  description="森の図書室を拠点に活動する架空VTuber事務所 MORI CROWN! の公式サイト。"
+>
+  <div class="container">
+    <section class="hero surface">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-badge">MINT GREEN PRODUCTION</p>
+          <h1>やさしい緑の世界で、
+            <br />毎日の配信をもっと楽しく。</h1>
+          <p class="lead">
+            MORI CROWN! は「癒し7割、わちゃわちゃ3割」をテーマに、夜の居場所をつくる架空VTuber事務所です。
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href={toHref('/talents/')}>タレントを見る</a>
+            <a class="button button-ghost" href={toHref('/news/')}>最新ニュース</a>
+          </div>
+        </div>
+
+        <aside class="live-panel">
+          <h2>今配信中 / 次回配信</h2>
+          <p><strong>2/14 22:00</strong> 森乃ミント「深夜雑談」</p>
+          <p><strong>2/14 23:00</strong> 榊シダ「制作進行ライブ」</p>
+          <div class="cta-row" style="margin-top: 0.7rem;">
+            <a class="button button-primary" href={toHref('/schedule/')}>配信スケジュールへ</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row">
+        <div>
+          <h2>HOT NEWS</h2>
+          <p class="section-lead">最新情報をすぐにチェック</p>
+        </div>
+        <a class="text-link" href={toHref('/news/')}>一覧を見る</a>
+      </div>
+      <div class="grid grid-3">
+        {featuredNews.map((entry) => <NewsCard entry={entry} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title-row">
+        <div>
+          <h2>TALENTS</h2>
+          <p class="section-lead">MORI CROWN! 所属メンバー</p>
+        </div>
+        <a class="text-link" href={toHref('/talents/')}>タレント一覧へ</a>
+      </div>
+      <div class="grid grid-3">
+        {featuredTalents.map((entry) => <TalentCard entry={entry} />)}
+      </div>
+    </section>
+
+    <section class="section grid grid-2">
+      <article class="surface" style="padding: 1rem;">
+        <h2 style="margin-top: 0;">公式オンラインストア</h2>
+        <p>季節グッズや限定ボイスを販売中。販売期間を確認してお見逃しなく。</p>
+        <a class="button button-primary" style="margin-top: 0.8rem;" href={toHref('/shop/')}>ショップへ</a>
+      </article>
+
+      <article class="surface" style="padding: 1rem;">
+        <h2 style="margin-top: 0;">オーディション募集中</h2>
+        <p>配信経験不問。あなたの「好き」を届けたい方を募集しています。</p>
+        <a class="button button-primary" style="margin-top: 0.8rem;" href={toHref('/audition/')}>募集要項を見る</a>
+      </article>
+    </section>
+  </div>
+</BaseLayout>

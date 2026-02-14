@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'MORI CROWN! の公式サイト' } = Astro.props;
+
+const mainNav: NavItem[] = [
+  { label: 'ホーム', href: '/' },
+  { label: 'ニュース', href: '/news/' },
+  { label: 'タレント', href: '/talents/' },
+  { label: '配信', href: '/schedule/' },
+  { label: 'ショップ', href: '/shop/' },
+  { label: 'オーディション', href: '/audition/' }
+];
+
+const utilityNav: NavItem[] = [
+  { label: 'ファン活動ガイド', href: '/fan-works/' },
+  { label: '会社概要', href: '/company/' },
+  { label: 'お問い合わせ', href: '/contact/' }
+];
+
+const toHref = (path: string) => {
+  if (/^https?:\/\//.test(path)) {
+    return path;
+  }
+  const cleaned = path.replace(/^\/+/, '');
+  return cleaned ? `${import.meta.env.BASE_URL}${cleaned}` : import.meta.env.BASE_URL;
+};
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const normalizedPath = base && Astro.url.pathname.startsWith(base)
+  ? Astro.url.pathname.slice(base.length) || '/'
+  : Astro.url.pathname;
+
+const isActive = (href: string) => {
+  if (href === '/') {
+    return normalizedPath === '/';
+  }
+  return normalizedPath.startsWith(href);
+};
+
+const canonical = new URL(Astro.url.pathname, 'https://s19447.github.io').toString();
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へスキップ</a>
+
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href={toHref('/')}>
+          <span class="brand-mark">🍃</span>
+          <span class="brand-text">MORI CROWN!</span>
+        </a>
+
+        <nav class="global-nav" aria-label="主要メニュー">
+          {
+            mainNav.map((item) => (
+              <a class={`nav-link ${isActive(item.href) ? 'is-active' : ''}`} href={toHref(item.href)}>
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-brand">MORI CROWN!</p>
+          <p class="footer-copy">やさしい緑の世界から、毎日に配信の魔法を。</p>
+        </div>
+
+        <nav aria-label="補助メニュー" class="footer-nav">
+          {
+            utilityNav.map((item) => (
+              <a href={toHref(item.href)}>{item.label}</a>
+            ))
+          }
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import NewsCard from '../../components/NewsCard.astro';
+
+const news = [...(await getCollection('news'))].sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+
+<BaseLayout title="ニュース | MORI CROWN!" description="MORI CROWN! の配信・イベント・グッズ・重要情報をお届けします。">
+  <div class="container">
+    <PageHero
+      eyebrow="NEWS"
+      title="ニュース"
+      lead="配信、イベント、グッズ、重要なお知らせをまとめています。"
+    />
+
+    <section class="section">
+      <div class="pill-row" aria-label="カテゴリ">
+        <span class="pill">すべて</span>
+        <span class="pill">配信</span>
+        <span class="pill">イベント</span>
+        <span class="pill">グッズ</span>
+        <span class="pill">重要</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid grid-2">
+        {news.map((entry) => <NewsCard entry={entry} />)}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

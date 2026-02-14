@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import TalentCard from '../../components/TalentCard.astro';
+
+const talents = [...(await getCollection('talents'))].sort((a, b) => a.data.generation.localeCompare(b.data.generation));
+---
+
+<BaseLayout title="タレント一覧 | MORI CROWN!" description="MORI CROWN! 所属VTuberのプロフィールと活動情報を紹介します。">
+  <div class="container">
+    <PageHero
+      eyebrow="TALENTS"
+      title="タレント一覧"
+      lead="1期生と2期生の個性豊かなメンバーを紹介します。"
+    />
+
+    <section class="section">
+      <div class="pill-row">
+        <span class="pill">すべて</span>
+        <span class="pill">1期生</span>
+        <span class="pill">2期生</span>
+        <span class="pill">癒し系</span>
+        <span class="pill">企画系</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid grid-3">
+        {talents.map((entry) => <TalentCard entry={entry} />)}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

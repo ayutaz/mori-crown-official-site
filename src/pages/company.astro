@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="会社概要 | MORI CROWN!" description="MORI CROWN! の運営方針と事務所概要。">
+  <div class="container">
+    <PageHero
+      eyebrow="COMPANY"
+      title="会社概要"
+      lead="MORI CROWN! は、森の図書室をテーマにした架空VTuber事務所です。"
+    />
+
+    <section class="section grid grid-2">
+      <article class="panel">
+        <h2>ミッション</h2>
+        <p>日常の疲れを軽くする「30分の回復時間」を届ける。</p>
+      </article>
+      <article class="panel">
+        <h2>ビジョン</h2>
+        <p>緑系・可愛い・安心感のあるブランドで長期運営する。</p>
+      </article>
+    </section>
+
+    <section class="section surface" style="padding: 1rem;">
+      <h2 style="margin-top: 0;">運営方針</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>やさしさ優先</h3>
+          <p>視聴者・配信者双方に配慮した運用を徹底</p>
+        </div>
+        <div class="feature-item">
+          <h3>配信継続性</h3>
+          <p>無理のない活動設計で長く続く配信文化を作る</p>
+        </div>
+        <div class="feature-item">
+          <h3>視聴者参加型</h3>
+          <p>コメント・企画参加で一緒に作るコミュニティ</p>
+        </div>
+        <div class="feature-item">
+          <h3>ルール運用</h3>
+          <p>誹謗中傷に対する明確なガイドラインを提示</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

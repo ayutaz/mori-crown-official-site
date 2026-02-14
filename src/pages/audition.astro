@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+const toHref = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
+const requirements = [
+  '18歳以上で継続的な配信活動ができる方',
+  '週3回以上の活動スケジュールを確保できる方',
+  'MORI CROWN! の世界観を大切にできる方'
+];
+
+const flow = ['応募フォーム送信', '一次選考（書類）', '二次選考（通話）', '最終連絡'];
+---
+
+<BaseLayout title="オーディション | MORI CROWN!" description="MORI CROWN! 新規タレント募集情報。">
+  <div class="container">
+    <PageHero
+      eyebrow="AUDITION"
+      title="新規タレント募集"
+      lead="一緒に夢を育てる仲間を随時募集しています。"
+    />
+
+    <section class="section grid grid-2">
+      <article class="panel">
+        <h2>応募対象</h2>
+        <ul>
+          {requirements.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>選考フロー</h2>
+        <ol>
+          {flow.map((item) => <li>{item}</li>)}
+        </ol>
+      </article>
+    </section>
+
+    <section class="section notice">
+      <p style="margin: 0;">配信経験の有無は問いません。応募前に活動方針を確認してください。</p>
+      <a class="button button-primary" style="margin-top: 0.7rem;" href={toHref('/contact/')}>応募フォームへ</a>
+    </section>
+  </div>
+</BaseLayout>

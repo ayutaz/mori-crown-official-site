@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="ファン活動ガイド | MORI CROWN!" description="二次創作ガイドライン、推奨タグ、配布素材を案内します。">
+  <div class="container">
+    <PageHero
+      eyebrow="FAN WORKS"
+      title="ファン活動ガイド"
+      lead="安心して創作活動ができるよう、利用ルールと配布素材をまとめています。"
+    />
+
+    <section class="section grid grid-2">
+      <article class="panel">
+        <h2>二次創作ルール</h2>
+        <ul>
+          <li>個人利用の範囲での創作投稿は歓迎</li>
+          <li>誹謗中傷・差別表現・過度な政治宗教表現は禁止</li>
+          <li>収益化はプラットフォーム標準機能の範囲で許可</li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>推奨ハッシュタグ</h2>
+        <div class="pill-row">
+          <span class="pill">#MORICROWN</span>
+          <span class="pill">#森乃ミント</span>
+          <span class="pill">#NoaPalette</span>
+          <span class="pill">#るるキャンバス</span>
+          <span class="pill">#こはるスケッチ</span>
+          <span class="pill">#シダ図鑑</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="section surface" style="padding: 1rem;">
+      <h2 style="margin-top: 0;">配布素材</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>ロゴセット</h3>
+          <p>配信サムネイル、告知画像で利用可能</p>
+        </div>
+        <div class="feature-item">
+          <h3>サムネフレーム</h3>
+          <p>切り抜き動画や感想投稿に利用可能</p>
+        </div>
+        <div class="feature-item">
+          <h3>公式カラーパレット</h3>
+          <p>ブランドに合う色指定を確認可能</p>
+        </div>
+        <div class="feature-item">
+          <h3>クレジット表記テンプレ</h3>
+          <p>配信URL記載ルール付きのテンプレ文</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

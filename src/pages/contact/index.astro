@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const toHref = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+---
+
+<BaseLayout title="お問い合わせ | MORI CROWN!" description="MORI CROWN! へのお問い合わせフォーム。">
+  <div class="container">
+    <PageHero
+      eyebrow="CONTACT"
+      title="お問い合わせ"
+      lead="法人、メディア、一般のお問い合わせを受け付けています。"
+    />
+
+    <section class="section panel">
+      <form action={toHref('/contact/thanks/')} method="get" class="form-grid">
+        <label>
+          種別
+          <select name="type" required>
+            <option value="">選択してください</option>
+            <option value="business">法人</option>
+            <option value="media">メディア</option>
+            <option value="general">一般</option>
+          </select>
+        </label>
+
+        <label>
+          お名前
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+
+        <label>
+          メールアドレス
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+
+        <label>
+          会社名（任意）
+          <input type="text" name="company" autocomplete="organization" />
+        </label>
+
+        <label class="full">
+          お問い合わせ内容
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+
+        <div class="full">
+          <button class="button button-primary" type="submit">送信する</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</BaseLayout>
