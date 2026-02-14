@@ -2,6 +2,10 @@
 
 MORI CROWN! は、緑系で可愛い世界観をテーマにした架空VTuber事務所サイトです。
 
+## Live Site
+
+- https://ayutaz.github.io/mori-crown-official-site/
+
 ## Tech Stack
 
 - Astro 5
