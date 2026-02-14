@@ -48,7 +48,8 @@ const isActive = (href: string) => {
   return normalizedPath.startsWith(href);
 };
 
-const canonical = new URL(Astro.url.pathname, 'https://s19447.github.io').toString();
+const siteOrigin = Astro.site?.toString() ?? 'https://ayutaz.github.io/';
+const canonical = new URL(Astro.url.pathname, siteOrigin).toString();
 ---
 
 <!doctype html>
